@@ -31,11 +31,14 @@ body {
 .black-primary {
   color: #030712;
 }
+.black-secondary {
+  color: #03071299;
+}
 .bg-green-primary {
   background: #1dd100;
 }
-.border {
-  border: 2px solid #1dd100;
+.border-btm {
+  border-bottom: 3px solid #1dd100;
 }
 /* Banner styles  */
 .banner_parent {

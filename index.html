@@ -20,12 +20,28 @@
   <!-- Header Section  -->
   <header class="main_container">
     <!-- header parent  -->
-    <div class="flex justify-between items-center mt-8">
+    <div class="flex justify-between items-center lg:mt-8 mt-4">
+      <!-- dropdown  starts -->
+      <div class="dropdown lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-300 font-[500] rounded-box w-52">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Search</a></li>
+        </ul>
+      </div>
+      <!-- dropdown  ends -->
       <div>
-        <h2 class="text-[28px] cursor-pointer select-none font-extrabold">E-Ticket</h2>
+        <h2 class="lg:text-[28px] cursor-pointer select-none font-extrabold">E-Ticket</h2>
       </div>
       <div>
-        <ul class="flex gap-10 text-base font-[500]">
+        <ul class="md:flex lg:gap-10 gap-2  hidden     lg:text-base font-[500]">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Destination</a></li>
@@ -40,6 +56,12 @@
   </header>
   <!-- Main section  -->
   <main class="main_container">
+    <!-- Banner section  -->
+    <section>
+      <div class="flex flex-col">
+
+      </div>
+    </section>
   </main>
   <!-- Footer section  -->
   <footer class="main_container"></footer>

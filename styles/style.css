@@ -1,3 +1,31 @@
-h1 {
-  color: red;
+/* font family added  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Main container  */
+.main_container {
+  width: 81%;
+  max-width: 90rem;
+  margin: auto;
+}
+.green-primary {
+  color: #1dd100;
+}
+.black-primary {
+  color: #030712;
+}
+.bg-primary {
+  background-color: #1dd100;
+}
+.border {
+  border: 2px solid #1dd100;
 }

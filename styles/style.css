@@ -40,6 +40,12 @@ body {
 .border-btm {
   border-bottom: 3px solid #1dd100;
 }
+.border-all {
+  border: 3px solid #1dd100;
+}
+.outline-all {
+  outline: 3px solid #1dd100;
+}
 /* Banner styles  */
 .banner_parent {
   background: linear-gradient(

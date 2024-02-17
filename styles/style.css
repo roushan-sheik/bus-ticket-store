@@ -17,15 +17,36 @@ body {
   max-width: 90rem;
   margin: auto;
 }
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 576px) and (orientation: portrait) {
+  .main_container {
+    width: 90%;
+    max-width: 90rem;
+    margin: auto;
+  }
+}
 .green-primary {
   color: #1dd100;
 }
 .black-primary {
   color: #030712;
 }
-.bg-primary {
-  background-color: #1dd100;
+.bg-green-primary {
+  background: #1dd100;
 }
 .border {
   border: 2px solid #1dd100;
+}
+/* Banner styles  */
+.banner_parent {
+  background: linear-gradient(
+      180deg,
+      rgba(3, 7, 18, 0.5),
+      rgba(3, 7, 18, 0) 100%
+    ),
+    url(1), url(../images/banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 2rem;
 }

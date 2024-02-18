@@ -11,6 +11,7 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+
 /* Main container  */
 .main_container {
   width: 81%;
@@ -29,7 +30,7 @@ body {
   color: #1dd100;
 }
 .black-primary {
-  color: #030712;
+  color: rgb(3, 7, 18);
 }
 .black-secondary {
   color: #03071299;
@@ -59,3 +60,30 @@ body {
   object-fit: cover;
   border-radius: 2rem;
 }
+.poribahon_main {
+  width: 100%;
+  max-width: 90rem;
+  margin: auto;
+  box-sizing: border-box;
+  border-top: 2px solid rgb(29, 209, 0);
+  border-radius: 88px 88px 0px 0px;
+  background: rgb(247, 248, 248);
+}
+@media screen and (max-device-width: 576px) and (orientation: portrait) {
+  .poribahon_main {
+    width: 100%;
+    max-width: 90rem;
+    margin: auto;
+  }
+}
+.secondary_btn {
+  border-radius: 12px;
+  background: rgba(29, 209, 0, 0.15);
+  border: 1px solid rgb(29, 209, 0);
+  padding: 14px;
+  cursor: pointer;
+}
+ /* Small hash box  */
+ .hash_box{
+  border-radius: 12px; background: rgba(3, 7, 18, 0.05); color: rgba(3, 7, 18, 0.8);
+ }

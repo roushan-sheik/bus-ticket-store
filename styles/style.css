@@ -74,6 +74,13 @@ body {
     max-width: 90rem;
     margin: auto;
   }
+  .secondary_btn {
+    border-radius: 10px;
+    background: rgba(29, 209, 0, 0.15);
+    border: 1px solid rgb(29, 209, 0);
+    padding: 8px;
+    cursor: pointer;
+  }
 }
 .secondary_btn {
   border-radius: 12px;
@@ -81,6 +88,15 @@ body {
   border: 1px solid rgb(29, 209, 0);
   padding: 14px;
   cursor: pointer;
+}
+@media screen and (max-device-width: 576px) and (orientation: portrait) {
+  .secondary_btn {
+    border-radius: 10px;
+    background: rgba(29, 209, 0, 0.15);
+    border: 1px solid rgb(29, 209, 0);
+    padding: 7px;
+    cursor: pointer;
+  }
 }
 /* Small hash box  */
 .hash_box {

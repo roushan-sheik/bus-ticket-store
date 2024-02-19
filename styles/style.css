@@ -108,7 +108,6 @@ body {
 .seat {
   border-radius: 12px;
   background: rgb(247, 248, 248);
-  
 }
 .bg-green-primary {
   background: #1dd100 !important;
@@ -120,4 +119,12 @@ body {
 }
 .btn_color {
   color: white !important;
+}
+.appendElement {
+  color: rgba(3, 7, 18, 0.6);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem /* 8px */;
+  margin-bottom: 0.5rem /* 8px */;
+  font-family: "Inter", sans-serif !important;
 }

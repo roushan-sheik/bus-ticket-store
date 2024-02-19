@@ -27,12 +27,42 @@ for (const seat of allSetas) {
     // change the button color
     chanBtnColor(event.target);
     // append the seat to the list
-    if (event.target.nodeName == "SPAN" || event.target.nodeName == "DIV") {
-      tempArr.push(event.target);
-    }
+    tempArr.push(event.target);
+    // ++++++++++++++++++++ Append seat ========================>
+    const append_box = document.getElementById("append_box");
+    // get seat name
+    let seatName = getSeatName(event);
+    let div = createElement("div");
+    let p1 = createElement("p");
+    p1.innerText = seatName;
+    let p2 = createElement("p");
+    p2.innerText = "Economy";
+    let p3 = createElement("p");
+    p3.innerText = 550;
+    //append child
+    div.appendChild(p1);
+    div.appendChild(p2);
+    div.appendChild(p3);
+    //   add style class
+    div.classList.add("appendElement");
+    console.log(div);
+    // append to the main div
+    append_box.appendChild(div);
   });
 }
-// create element function
+//* ================== end main code ========================
+//* ================== utils start ========================
+//NOTE - get seat name
+function getSeatName(event) {
+  let seatName = "";
+  if (event.target.nodeName == "DIV") {
+    seatName = event.target.childNodes[1].innerText;
+  } else if (event.target.nodeName == "SPAN") {
+    seatName = event.target.innerText;
+  }
+  return seatName;
+}
+//NOTE - create element function
 function createElement(tagName) {
   return document.createElement(tagName);
 }

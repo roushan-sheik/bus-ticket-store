@@ -1,7 +1,7 @@
 "use strict";
 // Total seat counter
-const totaSeats = document.getElementById("total_seat");
-const seatCountsValue = document.getElementById("seat_count");
+let totaSeats = document.getElementById("total_seat");
+let seatCountsValue = document.getElementById("seat_count");
 let seatCount = parseInt(seatCountsValue.innerText);
 let totalSeat = parseInt(totaSeats.innerText);
 
@@ -12,13 +12,29 @@ const allSetas = document.getElementsByClassName("seat");
 const tempArr = [];
 for (const seat of allSetas) {
   seat.addEventListener("click", (event) => {
-    if (tempArr.length > 3) {
-      alert("You cannot buy more than 4 tickets!");
-      return;
-    }
     // button dubble click checking
     let curSeatName = getSeatName(event);
     if (tempArr.includes(curSeatName)) {
+      removeBtnColor(event.target);
+      // updateCounter
+      totalSeat += 1;
+      seatCount -= 1;
+      // delete seat form list
+      let targetSeat = document.getElementById(curSeatName);
+      targetSeat.remove();
+      console.log(tempArr);
+      // remove form temp Array
+      let indx = tempArr.indexOf(curSeatName);
+      tempArr.splice(indx, 1);
+      updateTotalPrice();
+      updateGrandTotal();
+      updateTalSeats();
+      updateCount();
+      return;
+    }
+    // 4 items is or not
+    if (tempArr.length >= 4) {
+      alert("You cannot buy more than 4 tickets!");
       return;
     }
     //   subtract the seat count
@@ -26,11 +42,17 @@ for (const seat of allSetas) {
     seatCount += 1;
 
     // set update seat count value
-    totaSeats.innerText = totalSeat;
+    function updateTalSeats() {
+      totaSeats.innerText = totalSeat;
+    }
+    updateTalSeats();
     // update count
-    seatCountsValue.innerText = seatCount;
+    function updateCount() {
+      seatCountsValue.innerText = seatCount;
+    }
+    updateCount();
     // change the button color
-    chanBtnColor(event.target);
+    changeBtnColor(event.target);
     // append the seat to the list
     if (event.target.nodeName == "DIV") {
       tempArr.push(event.target.childNodes[1].innerText);
@@ -42,7 +64,11 @@ for (const seat of allSetas) {
     const append_box = document.getElementById("append_box");
     // get seat name
     let seatName = getSeatName(event);
+    // Unique key
+    let key = getSeatName(event);
     let div = createElement("div");
+    div.setAttribute("id", key);
+    console.log(div);
     let p1 = createElement("p");
     p1.innerText = seatName;
     let p2 = createElement("p");
@@ -63,10 +89,25 @@ for (const seat of allSetas) {
     let curTotal = parseInt(ticketPrice);
     curTotal += 550;
     show_total_box.innerText = curTotal;
+    // deselect update price
+    function updateTotalPrice() {
+      const show_total_box = document.getElementById("show_total_box");
+      let ticketPrice = show_total_box.innerText;
+      let curTotal = parseInt(ticketPrice);
+      curTotal -= 550;
+      show_total_box.innerText = curTotal;
+    }
     // ============= Show Grand total price =================>
     const grand_total_box = document.getElementById("grand_total_box");
     let grandTotal = parseInt(show_total_box.innerText);
     grand_total_box.innerText = grandTotal;
+    // update grand total value
+    function updateGrandTotal() {
+      const show_total_box = document.getElementById("show_total_box");
+      const grand_total_box = document.getElementById("grand_total_box");
+      let grandTotal = parseInt(show_total_box.innerText);
+      grand_total_box.innerText = grandTotal;
+    }
     // next btn enable by onClick and adding phone number
     const nextBtn = document.getElementById("next_btn");
     enableNextBtn(nextBtn);
@@ -166,13 +207,22 @@ function createElement(tagName) {
   return document.createElement(tagName);
 }
 //NOTE - Chang the button color function
-function chanBtnColor(target) {
+function changeBtnColor(target) {
   if (target.nodeName == "SPAN") {
-    target.parentNode.classList.add("bg_primary");
     target.parentNode.classList.add("bg_primary");
     target.classList.add("btn_color");
   } else if (target.nodeName == "DIV") {
     target.classList.add("bg_primary");
     target.childNodes[1].classList.add("btn_color");
+  }
+}
+// NOTE Deselect button
+function removeBtnColor(target) {
+  if (target.nodeName == "SPAN") {
+    target.parentNode.classList.remove("bg_primary");
+    target.classList.remove("btn_color");
+  } else if (target.nodeName == "DIV") {
+    target.classList.remove("bg_primary");
+    target.childNodes[1].classList.remove("btn_color");
   }
 }

@@ -30,6 +30,7 @@ for (const seat of allSetas) {
       updateGrandTotal();
       updateTalSeats();
       updateCount();
+      updateApplyBtn();
       return;
     }
     // 4 items is or not
@@ -229,4 +230,10 @@ function removeBtnColor(target) {
     target.classList.remove("bg_primary");
     target.childNodes[1].classList.remove("btn_color");
   }
+}
+// Disabled apply button
+function updateApplyBtn() {
+  const coupon_box = document.getElementById("coupon_box");
+  const cpn_btn = document.getElementById("coupon_btn");
+  cpn_btn.disabled = true;
 }

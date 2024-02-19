@@ -78,14 +78,19 @@ for (const seat of allSetas) {
             const total = grandTotal - discountTotal;
             grand_total_box.innerText = total;
             coupon_box.classList.add("hidden");
+            // display:  safeMoney
+            appendSafe(grandTotal - total);
             // display Toast
             displayToast("success_new");
           } else if (coupon == cupple) {
             let grandTotal = parseInt(grand_total_box.innerText);
             let discountTotal = grandTotal * 0.2;
-            const total = grandTotal - discountTotal;
+            const total = Math.round(grandTotal - discountTotal);
             grand_total_box.innerText = total;
             coupon_box.classList.add("hidden");
+            // new discount price
+            const safeMoney = grandTotal - total;
+            appendSafe(safeMoney);
             // display Toast
             displayToast("success_cupple");
           } else if (coupon != new_fif || coupon != cupple) {
@@ -98,6 +103,21 @@ for (const seat of allSetas) {
 }
 //* ================== end main code ========================
 //* ================== utils start ========================
+// NOTE - append safe money
+function appendSafe(safeMoney) {
+  const append_discount = document.getElementById("append_discount");
+  const discount_box = createElement("div");
+  const discount_text = createElement("p");
+  discount_text.innerText = "Total Discount (Safe BDT)";
+  discount_box.appendChild(discount_text);
+  const discount_price = createElement("p");
+  discount_price.innerText = parseInt(safeMoney);
+  discount_box.appendChild(discount_price);
+  //append to the box
+  discount_box.classList.add("appendElement");
+  console.log(discount_box);
+  append_discount.appendChild(discount_box);
+}
 // NOTE Display Toast message
 function displayToast(id) {
   const toast = document.getElementById(id);

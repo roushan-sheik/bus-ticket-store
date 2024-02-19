@@ -27,7 +27,12 @@ for (const seat of allSetas) {
     // change the button color
     chanBtnColor(event.target);
     // append the seat to the list
-    tempArr.push(event.target);
+    if (event.target.nodeName == "DIV") {
+      tempArr.push(event.target.childNodes[1]);
+    } else if (event.target.nodeName == "SPAN") {
+      tempArr.push(event.target);
+    }
+    console.log(tempArr);
     // ++++++++++++++++++++ Append seat ========================>
     const append_box = document.getElementById("append_box");
     // get seat name

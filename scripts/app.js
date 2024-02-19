@@ -57,11 +57,38 @@ for (const seat of allSetas) {
     const grand_total_box = document.getElementById("grand_total_box");
     let grandTotal = parseInt(show_total_box.innerText);
     grand_total_box.innerText = grandTotal;
-    // next btn enabled by onClick and adding phone number
+    // next btn enable by onClick and adding phone number
     const nextBtn = document.getElementById("next_btn");
     enableNextBtn(nextBtn);
-  });
-  //IDS: coupon_box coupon_btn
+    // Apply button enable
+    if (tempArr.length == 4) {
+      const coupon_box = document.getElementById("coupon_box");
+      const cpn_btn = document.getElementById("coupon_btn");
+      cpn_btn.disabled = false;
+      // On submit functionality apply coupon
+      const new_fif = "NEW15";
+      const cupple = "Couple 20";
+      const input_coupon = document.getElementById("input_coupon");
+      input_coupon.addEventListener("keyup", (e) => {
+        let coupon = e.target.value;
+        cpn_btn.addEventListener("click", (e) => {
+          if (coupon == new_fif) {
+            let grandTotal = parseInt(grand_total_box.innerText);
+            let discountTotal = grandTotal * 0.15;
+            const total = grandTotal - discountTotal;
+            grand_total_box.innerText = total;
+            coupon_box.classList.add("hidden");
+          } else if (coupon == cupple) {
+            let grandTotal = parseInt(grand_total_box.innerText);
+            let discountTotal = grandTotal * 0.2;
+            const total = grandTotal - discountTotal;
+            grand_total_box.innerText = total;
+            coupon_box.classList.add("hidden");
+          }
+        });
+      });
+    }
+  }); // Loop end
 }
 //* ================== end main code ========================
 //* ================== utils start ========================

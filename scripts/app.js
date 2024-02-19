@@ -53,6 +53,10 @@ for (const seat of allSetas) {
     let curTotal = parseInt(ticketPrice);
     curTotal += 550;
     show_total_box.innerText = curTotal;
+    // ============= Show Grand total price =================>
+    const grand_total_box = document.getElementById("grand_total_box");
+    let grandTotal = parseInt(show_total_box.innerText);
+    grand_total_box.innerText = grandTotal;
   });
 }
 //* ================== end main code ========================

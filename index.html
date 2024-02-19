@@ -72,7 +72,7 @@
             elit. Unde
             consectetur culpa Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, laboriosam!
             deserunt voluptate enim eos perspiciatis.</p>
-          <button class="btn md:mb-[7.5rem]  bg-[#1dd100]">Buy Tickets</button>
+          <button class="btn md:mb-[7.5rem]  bg-[#1dd100]"><a href="#destination">Buy Tickets</a></button>
         </div>
         <!-- <<<<<<<<<<<<<<< banner cart box >>>>>>>>>>>>>>> -->
         <div
@@ -554,7 +554,7 @@
               <div id="coupon_box" class="relative mb-6">
                 <input id="input_coupon" class="py-5 pl-[22px] rounded-xl w-full placeholder:text-sm" type="text"
                   placeholder="Have any coupon?">
-                <button type="submit"  id="coupon_btn" disabled
+                <button type="submit" id="coupon_btn" disabled
                   class="absolute right-2 top-2 btn font-semibold text-white bg-[#1DD100]">Apply</button>
               </div>
 
@@ -585,7 +585,7 @@
 
                 <div class="mb-6 mt-2">
                   <button id="next_btn" disabled onclick="my_modal_1.showModal()"
-                    class="w-full font-rale btn bg-[#1DD100] font-extrabold text-xl text-white">Next</button>
+                    class="w-full font-rale btn bg-[#1DD100] font-extrabold text-xl text-white"></button>
                 </div>
 
                 <div class="flex justify-evenly text-[rgba(3,7,18,0.6)]">
@@ -597,7 +597,23 @@
           </div>
           <!--  <<<<<<<<<<<<<<<<< seat content parent end >>>>>>>>>>>>> -->
           <!-- (((((((Toast )))))))) -->
-
+          <div id="success_new" class=" hidden toast toast-center toast-middle">
+            <div class="alert alert-info">
+              <span class="font-semibold roboto lg:text-[22px] text-white">You have Got 15% Discount</span>
+            </div>
+          </div>
+          <!-- toast 2  -->
+          <div id="success_cupple" class=" hidden toast toast-center toast-middle">
+            <div class="alert alert-success">
+              <span class="font-semibold roboto lg:text-[22px] text-white">You have Got 20% Discount</span>
+            </div>
+          </div>
+          <!-- toast 3 -->
+          <div id="invalid_coupon" class="hidden toast toast-center toast-middle">
+            <div class="alert bg-red-400 text-white">
+              <span class="font-semibold lg:text-[22px]">Invalid Coupon</span>
+            </div>
+          </div>
           <!-- (((((((Modal )))))))) -->
           <!-- Open the modal using ID.showModal() method -->
           <dialog id="my_modal_1" class="modal lg:py-8">

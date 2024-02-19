@@ -72,18 +72,36 @@ for (const seat of allSetas) {
       input_coupon.addEventListener("keyup", (e) => {
         let coupon = e.target.value;
         cpn_btn.addEventListener("click", (e) => {
+          // Toasts
+          const success_new = document.getElementById("success_new");
+          const success_cupple = document.getElementById("success_new");
           if (coupon == new_fif) {
             let grandTotal = parseInt(grand_total_box.innerText);
             let discountTotal = grandTotal * 0.15;
             const total = grandTotal - discountTotal;
             grand_total_box.innerText = total;
             coupon_box.classList.add("hidden");
+            success_new.classList.remove("hidden");
+            setTimeout(() => {
+              success_new.classList.add("hidden");
+            }, 2000);
           } else if (coupon == cupple) {
             let grandTotal = parseInt(grand_total_box.innerText);
             let discountTotal = grandTotal * 0.2;
             const total = grandTotal - discountTotal;
             grand_total_box.innerText = total;
             coupon_box.classList.add("hidden");
+            success_cupple.classList.remove("hidden");
+            setTimeout(() => {
+              success_cupple.classList.add("hidden");
+            }, 2000);
+          } else if (coupon != new_fif || coupon != cupple) {
+            const invalid_coupon = document.getElementById("invalid_coupon");
+            invalid_coupon.classList.remove("hidden");
+            console.log("Error");
+            setTimeout(() => {
+              invalid_coupon.classList.add("hidden");
+            }, 2000);
           }
         });
       });

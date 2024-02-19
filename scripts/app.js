@@ -16,6 +16,11 @@ for (const seat of allSetas) {
       alert("You cannot buy more than 4 tickets!");
       return;
     }
+    // button dubble click checking
+    let curSeatName = getSeatName(event);
+    if (tempArr.includes(curSeatName)) {
+      return;
+    }
     //   subtract the seat count
     totalSeat -= 1;
     seatCount += 1;
@@ -28,9 +33,9 @@ for (const seat of allSetas) {
     chanBtnColor(event.target);
     // append the seat to the list
     if (event.target.nodeName == "DIV") {
-      tempArr.push(event.target.childNodes[1]);
+      tempArr.push(event.target.childNodes[1].innerText);
     } else if (event.target.nodeName == "SPAN") {
-      tempArr.push(event.target);
+      tempArr.push(event.target.innerText);
     }
     console.log(tempArr);
     // ++++++++++++++++++++ Append seat ========================>

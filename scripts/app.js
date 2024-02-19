@@ -57,10 +57,29 @@ for (const seat of allSetas) {
     const grand_total_box = document.getElementById("grand_total_box");
     let grandTotal = parseInt(show_total_box.innerText);
     grand_total_box.innerText = grandTotal;
+    // next btn enabled by onClick and adding phone number
+    const nextBtn = document.getElementById("next_btn");
+    enableNextBtn(nextBtn);
   });
+  //IDS: coupon_box coupon_btn
 }
 //* ================== end main code ========================
 //* ================== utils start ========================
+//NOTE - Next btn enabled features
+function enableNextBtn(button) {
+  const numberInput = document.getElementById("input_number");
+  numberInput.addEventListener("keyup", (event) => {
+    let num = Number(event.target.value);
+    let tempNum = num.toString();
+    if (tempNum.includes("NaN") || tempNum.length < 10) {
+      const error_box = document.getElementById("error_box");
+      error_box.innerText = "Invalid number";
+    } else {
+      error_box.innerText = "";
+      button.disabled = false;
+    }
+  });
+}
 //NOTE - get seat name
 function getSeatName(event) {
   let seatName = "";

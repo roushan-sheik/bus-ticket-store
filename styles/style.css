@@ -34,10 +34,7 @@ body {
 .black-secondary {
   color: #03071299;
 }
-.bg-green-primary {
-  background: #1dd100 !important;
-  color: white !important;
-}
+
 .border-btm {
   border-bottom: 3px solid #1dd100;
 }
@@ -112,4 +109,12 @@ body {
   border-radius: 12px;
   background: rgb(247, 248, 248);
   
+}
+.bg-green-primary {
+  background: #1dd100 !important;
+  color: white !important;
+}
+.bg_primary {
+  background: #1dd100 !important;
+  color: white !important;
 }

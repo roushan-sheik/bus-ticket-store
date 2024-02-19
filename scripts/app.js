@@ -45,9 +45,14 @@ for (const seat of allSetas) {
     div.appendChild(p3);
     //   add style class
     div.classList.add("appendElement");
-    console.log(div);
     // append to the main div
     append_box.appendChild(div);
+    // ============= Show total price =================>
+    const show_total_box = document.getElementById("show_total_box");
+    let ticketPrice = show_total_box.innerText;
+    let curTotal = parseInt(ticketPrice);
+    curTotal += 550;
+    show_total_box.innerText = curTotal;
   });
 }
 //* ================== end main code ========================

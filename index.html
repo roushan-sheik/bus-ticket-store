@@ -579,7 +579,8 @@
                 </div>
 
                 <div class="mb-6 mt-2">
-                  <button class="w-full font-rale btn bg-[#1DD100] font-extrabold text-xl text-white">Next</button>
+                  <button onclick="my_modal_1.showModal()"
+                    class="w-full font-rale btn bg-[#1DD100] font-extrabold text-xl text-white">Next</button>
                 </div>
 
                 <div class="flex justify-evenly text-[rgba(3,7,18,0.6)]">
@@ -590,7 +591,27 @@
             </form>
           </div>
           <!--  <<<<<<<<<<<<<<<<< seat content parent end >>>>>>>>>>>>> -->
-
+          <!-- (((((((Modal )))))))) -->
+          <!-- Open the modal using ID.showModal() method -->
+          <dialog id="my_modal_1" class="modal lg:py-8">
+            <div class="modal-box flex flex-col  justify-center items-center">
+              <div class="flex flex-col justify-center items-center">
+                <img class="lg:w-[90px] lg:h-[90px] w-[60px] h-[60px]" src="./images/success.png" alt="">
+                <h2 class="green-primary text-[22px] font-bold lg:my-6 my-4">SUCCESS</h2>
+              </div>
+              <h3 class="font-bold text-lg">Thank you for Booking Our Bus Seats.
+                We are working hard to find the best service and deals for you.
+              </h3>
+              <p class="py-2">Shortly you will find a confirmation in your email.</p>
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn bg_primary lg:w-[300px] font-[600] text-[18px] rounded-[30px]">Continue
+                  </button>
+                </form>
+              </div>
+            </div>
+          </dialog>
         </div>
         <!-- ===========form container=============  -->
 

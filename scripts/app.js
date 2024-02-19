@@ -152,8 +152,12 @@ for (const seat of allSetas) {
     }
   }); // Loop end
 }
+// show modal
+// let next_btn = document.getElementById("next_btn");
+// next_btn.addEventListener(("click", (e) => {}));
 //* ================== end main code ========================
 //* ================== utils start ========================
+
 // NOTE - append safe money
 function appendSafe(safeMoney) {
   const append_discount = document.getElementById("append_discount");

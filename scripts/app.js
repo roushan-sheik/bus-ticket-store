@@ -20,9 +20,7 @@ for (const seat of allSetas) {
     // update count
     seatCountsValue.innerText = seatCount;
     // change the button color
-    if (event.target.nodeName == "DIV" || event.target.nodeName == "SPAN") {
-      chanBtnColor(event.target);
-    }
+    chanBtnColor(event.target);
   });
 }
 //NOTE - Chang the button color function
@@ -30,7 +28,9 @@ function chanBtnColor(target) {
   if (target.nodeName == "SPAN") {
     target.parentNode.classList.add("bg_primary");
     target.parentNode.classList.add("bg_primary");
+    target.classList.add("btn_color");
   } else if (target.nodeName == "DIV") {
     target.classList.add("bg_primary");
+    target.childNodes[1].classList.add("btn_color");
   }
 }

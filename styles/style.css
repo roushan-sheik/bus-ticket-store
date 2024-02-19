@@ -108,3 +108,8 @@ body {
 .s_black {
   color: rgba(3, 7, 18, 0.6);
 }
+.seat {
+  border-radius: 12px;
+  background: rgb(247, 248, 248);
+  
+}
